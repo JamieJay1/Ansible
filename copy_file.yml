@@ -1,0 +1,16 @@
+---
+- name: Copy a custom file
+  hosts: all
+  become: yes
+  tasks:
+   - name: Copy message file to /tmp
+     copy:
+      src: message.txt
+      dest: /tmp/jamie_message.txt
+      mode: '0644'
+
+   - name: Create a directory
+     file:
+       path: /tmp/jamie_dir
+       state: directory
+       mode: "0755"

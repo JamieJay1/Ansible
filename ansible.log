@@ -1,0 +1,7 @@
+this is a log for ansible playbook
+
+==========================ANSIBLE PLAYBOOK LOG =======================
+
+Thu Apr 24 10:54:13 WAT 2025: Ran Ansible playbook to copy message file
+Thu Apr 24 11:17:27 WAT 2025: An Ansible playbook was created to create a directory and a message file
+Thu Apr 24 12:21:58 WAT 2025: I ran a multitasking Ansible Playbook

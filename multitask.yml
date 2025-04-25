@@ -1,0 +1,24 @@
+
+---
+- name: Multitask playbook with variables
+  hosts: all
+  become: yes
+  vars:
+    package_name: htop
+    config_file: nginx_custom.conf
+    config_dest: /tmp/nginx_custom.conf
+    service_name: nginx
+  tasks:
+  - name: install a  package
+    apt:
+      name: "{{package_name}}"
+      state: present
+  - name: copy a config file
+    copy:
+      src: "{{config_file}}"
+      dest: "{{config_dest}}"
+      mode: "0644"
+  - name: Ensure a service is running
+    service:
+      name: "{{service_name}}"
+      state: started
