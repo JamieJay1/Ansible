@@ -4,7 +4,7 @@
   hosts: all
   become: yes
   vars:
-    package_name: htop
+    package_name: vim
     config_file: nginx_custom.conf
     config_dest: /tmp/nginx_custom.conf
     service_name: nginx
