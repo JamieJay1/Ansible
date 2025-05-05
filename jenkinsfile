@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn package'  // Example for a Java build
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
 
     stages {
         stage('Hello') {
